@@ -39,32 +39,40 @@ As a user, I want the ability to...
 - upload a photo in my review
 
 ```
+## WIREFRAMES
+![homepage](https://i.imgur.com/bFxJBSE.png)
+![create](https://i.imgur.com/3J4847M.png)
+![index](https://i.imgur.com/XypllTs.png)
+![show](https://i.imgur.com/YmI2ScJ.png)
 
 ## ROUTES
- 
+ `auth`
+|Verb| Path | Action | Description |
+|--------| ---------|----------|-----|
+|POST|/sign-in/|Create|Create account|
+|POST|/sign-up/|Create|Login then redirect|
+|DELETE|/sign-out/|Delete|Logout, then redirect to homepage |
+|PATCH|/change-password/|Edit| Change password|
+
+`petsitters`
+|Verb|Path|Action|Description|
+|---|---|---|---|
+| GET | /petsitters/ | Show | Index of all pet-sitters |
+| GET | /petsitters/:id/ | Show | Pet sitter’s homepage |
+| POST | /petsitters/:id/ | Create | Create pet sitter|
+| PATCH | /petsitters/:id/ | Edit  | Edit pet sitter |
+| DELETE | /petsitters/:id/ | Delete | Delete pet sitter|
+
+`reviews`
+|Verb|Path|Action|Description|
+|---|---|---|---|
+| GET | /reviews/ | Show | Index of all user's reviews|
+| POST | /reviews/:id/ | Create | Create a review|
+| PATCH | /reviews/:id/ | Edit  | Edit a review |
+| DELETE | /reviews/:id/ | Delete | Delete a review|
 
 
-| Verb | Path | Action | Description |
-| —------- | —------- | —------- | —------- |
-| GET | / | Index | Landing page |
-| GET | users/ | Show | Show all details for user - homepage |
-| POST |  users/signup | Create | Create account for new user |
-| POST | users/login | Login | Login, then redirect |
-| POST | users/logout | Logout | Logout, then redirect to homepage |
-| GET | users/pets | Show | Index all user’s pets |
-| GET | users/reviews | Show | Show user’s reviews |
-
-
-| Verb | Path | Action | Description |
-
-| —------- | —------- | —------- | —------- |
-| GET | /pet-sitters | Show | Index of all pet-sitters |
-| GET | /pet-sitters/:id | Show | Pet-sitter’s homepage |
-| POST | /pet-sitters/:id | Review | Add review for pet-sitter |
-| PATCH | /pet-sitters/:id | Edit Review | Edit review for pet-sitters |
-| DELETE | /pet-sitters/:id | Delete Review | Delete review for pet-sitters |
-
-
+## SCHEDULE
 |Schedule||
 |--------| -------------------|
 | Monday | Planning and Pitch |
