@@ -85,14 +85,7 @@ As a user, I want the ability to...
 |Friday|Present|
 |Saturday |Party!!!!|
 
-
-
-
-
- 
-
-
-
-
+### Back-up 
+Pet Adoption Site
 
 # django-pawsitters
