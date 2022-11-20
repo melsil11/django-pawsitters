@@ -40,7 +40,7 @@ As a user, I want the ability to...
 
 ```
 ## WIREFRAMES
-![homepage](https://i.imgur.com/bFxJBSE.png)
+![homepage](https://i.imgur.com/SFBejoG.png)
 ![create](https://i.imgur.com/3J4847M.png)
 ![index](https://i.imgur.com/XypllTs.png)
 ![show](https://i.imgur.com/YmI2ScJ.png)
