@@ -30,27 +30,33 @@ Additionally, users can also sign up to be a pet sitter or dog walker on our app
 As a user, I want the ability to... 
 - sign up, sign in, change password, and sign out
 - find pet sitters
-- hire a pet sitter
+- create a pet owner profile
 - list myself as a pet sitter by creating a pet sitter profile
+- hire a pet sitter by creating a booking
+- edit and delete a booking
 - upload a profile photo
-- edit and delete my pet sitter profile
+- edit and delete my profile
 - review a pet sitter
 - edit and delete my review
 - upload a photo in my review
-
 ```
-## WIREFRAMES
+## WIREFRAMES 
 ![homepage](https://i.imgur.com/SFBejoG.png)
 ![create](https://i.imgur.com/3J4847M.png)
 ![index](https://i.imgur.com/XypllTs.png)
 ![show](https://i.imgur.com/YmI2ScJ.png)
 
+
+## ENTITY RELATIONSHIP DIAGRAMS
+![ERD](https://i.imgur.com/A8yNtxh.png)
+![TABLE](https://i.imgur.com/mh4YKkP.png)
+
 ## ROUTES
  `auth`
 |Verb| Path | Action | Description |
 |--------| ---------|----------|-----|
-|POST|/sign-in/|Create|Create account|
-|POST|/sign-up/|Create|Login then redirect|
+|POST|/sign-up/|Create|Create account|
+|POST|/sign-in/|Create|Login then redirect|
 |DELETE|/sign-out/|Delete|Logout, then redirect to homepage |
 |PATCH|/change-password/|Edit| Change password|
 
