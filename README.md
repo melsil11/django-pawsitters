@@ -57,7 +57,7 @@ As a user, I want the ability to...
 `petsitters`
 |Verb|Path|Action|Description|
 |---|---|---|---|
-| GET | /petsitters/ | Show | Index of all pet-sitters |
+| GET | /petsitters/ | Index | Index of all pet-sitters |
 | GET | /petsitters/:id/ | Show | Pet sitter’s homepage |
 | POST | /petsitters/:id/ | Create | Create pet sitter|
 | PATCH | /petsitters/:id/ | Edit  | Edit pet sitter |
@@ -66,7 +66,8 @@ As a user, I want the ability to...
 `reviews`
 |Verb|Path|Action|Description|
 |---|---|---|---|
-| GET | /reviews/ | Show | Index of all user's reviews|
+| GET | /reviews/ | Index | Index of all user's reviews|
+| GET | /reviews/:id | Show | Show a review|
 | POST | /reviews/:id/ | Create | Create a review|
 | PATCH | /reviews/:id/ | Edit  | Edit a review |
 | DELETE | /reviews/:id/ | Delete | Delete a review|
