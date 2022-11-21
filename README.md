@@ -63,11 +63,27 @@ As a user, I want the ability to...
 `petsitters`
 |Verb|Path|Action|Description|
 |---|---|---|---|
-| GET | /petsitters/ | Index | Index of all pet-sitters |
+| GET | /petsitters/ | Index | Index of all pet sitters |
 | GET | /petsitters/:id/ | Show | Pet sitter’s homepage |
 | POST | /petsitters/:id/ | Create | Create pet sitter|
 | PATCH | /petsitters/:id/ | Edit  | Edit pet sitter |
 | DELETE | /petsitters/:id/ | Delete | Delete pet sitter|
+
+`petowners`
+|Verb|Path|Action|Description|
+|---|---|---|---|
+| GET | /petowners/:id/ | Show | Pet owner’s profile |
+| POST | /petowners/:id/ | Create | Create pet owner|
+| PATCH | /petowners/:id/ | Edit  | Edit pet owner |
+| DELETE | /petowners/:id/ | Delete | Delete pet owner|
+
+`bookings`
+|Verb|Path|Action|Description|
+|---|---|---|---|
+| GET | /bookings/ | Index | Index of all user's bookings |
+| POST | /bookings/:id/ | Create | Create booking|
+| PATCH | /bookings/:id/ | Edit  | Edit booking |
+| DELETE | /bookings/:id/ | Delete | Delete delete|
 
 `reviews`
 |Verb|Path|Action|Description|
