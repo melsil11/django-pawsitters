@@ -8,7 +8,7 @@ from ..models.booking import Booking
 from ..serializers import BookingSerializer, BookingBookedSerializer
 
 # Create your views here.
-class Bookings(generics.ListCreateAPIView):
+class BookingsView(generics.ListCreateAPIView):
     permission_classes=(IsAuthenticated,)
     serializer_class = BookingSerializer
     def get(self, request):
@@ -35,7 +35,7 @@ class Bookings(generics.ListCreateAPIView):
         # If the data is not valid, return a response with the errors
         return Response(booking.errors, status=status.HTTP_400_BAD_REQUEST)
 
-class BookingDetail(generics.RetrieveUpdateDestroyAPIView):
+class BookingDetailView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes=(IsAuthenticated,)
     def get(self, request, pk):
         """Show request"""
