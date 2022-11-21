@@ -3,11 +3,49 @@ from rest_framework import serializers
 
 from .models.mango import Mango
 from .models.user import User
+from .models.pet_owner import PetOwner
+from .models.pet_sitter import PetSitter
+from .models.booking import Booking
+from .models.review import Review
 
 class MangoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Mango
         fields = ('id', 'name', 'color', 'ripe', 'owner')
+
+class PetOwnerSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = '__all__'
+        model = PetOwner
+
+class PetSitterSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = '__all__'
+        model = PetSitter
+
+class BookingSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = '__all__'
+        model = Booking
+
+class BookingBookedSerializer(serializers.ModelSerializer):
+    pet_owner = serializers.StringRelatedField()
+    pet_sitter = serializers.StringRelatedField()
+    class Meta:
+        fields = '__all__'
+        model = Booking
+
+class ReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = '__all__'
+        model = Review
+
+class ReviewMadeSerializer(serializers.ModelSerializer):
+    pet_owner = serializers.StringRelatedField()
+    pet_sitter = serializers.StringRelatedField()
+    class Meta:
+        fields = '__all__'
+        model = Review
 
 class UserSerializer(serializers.ModelSerializer):
     # This model serializer will be used for User creation
