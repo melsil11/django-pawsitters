@@ -15,7 +15,7 @@ class PetSitter(models.Model):
     time = models.TimeField
     medicine = models.BooleanField(default=False)
     color = models.CharField(max_length=100)
-    image = models.TextField(null=True)
+    image = models.TextField(blank=True)
     owner = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE
