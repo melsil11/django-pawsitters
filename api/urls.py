@@ -4,7 +4,7 @@ from .views.user_views import SignUp, SignIn, SignOut, ChangePassword
 from .views.pet_owner_views import PetOwnersView, PetOwnerDetailView
 from .views.pet_sitter_views import PetSittersView, PetSitterDetailView
 from .views.reviews_views import ReviewsView, ReviewDetailView
-from .views.bookings_View import BookingsView, BookingDetailView
+from .views.booking_views import BookingsView, BookingDetailView
 
 urlpatterns = [
   	# Restful routing
