@@ -3,7 +3,7 @@ from .views.mango_views import Mangos, MangoDetail
 from .views.user_views import SignUp, SignIn, SignOut, ChangePassword
 from .views.pet_owner_views import PetOwnersView, PetOwnerDetailView
 from .views.pet_sitter_views import PetSittersView, PetSitterDetailView
-from .views.reviews_views import ReviewsView, ReviewDetailView
+from .views.review_views import ReviewsView, ReviewDetailView
 from .views.booking_views import BookingsView, BookingDetailView
 
 urlpatterns = [
