@@ -10,7 +10,7 @@ class PetOwner(models.Model):
     owner = models.ForeignKey(
       get_user_model(),
       on_delete=models.CASCADE)
-    images = models.TextField()
+    images = models.TextField(blank= True)
     
     # upload = models.ImageField(upload_to ='uploads/')
 
