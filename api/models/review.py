@@ -25,5 +25,8 @@ class Review(models.Model):
 
     rating = models.IntegerField(choices=Rating.choices)
 
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
     def __str__(self):
         return f"{self.pet_owner} {self.comment} {self.rating}"
