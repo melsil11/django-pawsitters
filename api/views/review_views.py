@@ -7,7 +7,7 @@ from django.shortcuts import get_object_or_404
 from ..models.review import Review
 from ..serializers import ReviewSerializer, ReviewMadeSerializer
 
-class Reviews(generics.ListCreateAPIView):
+class ReviewsView(generics.ListCreateAPIView):
     permission_classes=(IsAuthenticated,)
     serializer_class = ReviewSerializer
     def get(self, request):
