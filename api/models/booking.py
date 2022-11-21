@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from .pet_owner import PetOwner
-from .pet_sitters import PetSitter
+from .pet_sitter import PetSitter
 
 # Create your models here.
 class Booking(models.Model):

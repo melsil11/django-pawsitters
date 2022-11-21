@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-from .pet_types import PetTypes
+from .pet_type import PetTypes
 
 # Create your models here.
 
@@ -13,7 +13,7 @@ class PetSitter(models.Model):
     rate = models.IntegerField()
     date = models.DateField
     time = models.TimeField
-    medicine = models.Boolean(default=False)
+    medicine = models.BooleanField(default=False)
     color = models.CharField(max_length=100)
     image = models.TextField(null=True)
     owner = models.ForeignKey(

@@ -4,7 +4,7 @@ from rest_framework.exceptions import PermissionDenied
 from rest_framework import generics, status
 from django.shortcuts import get_object_or_404
 
-from ..models.pet_sitters import PetSitter
+from ..models.pet_sitter import PetSitter
 from ..serializers import PetSitterSerializer
 
 # Create your views here.
@@ -35,7 +35,7 @@ class PetSittersView(generics.ListCreateAPIView):
         # If the data is not valid, return a response with the errors
         return Response(pet_sitter.errors, status=status.HTTP_400_BAD_REQUEST)
 
-class PetSitterDetail(generics.RetrieveUpdateDestroyAPIView):
+class PetSitterDetailView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes=(IsAuthenticated,)
     def get(self, request, pk):
         """Show request"""
