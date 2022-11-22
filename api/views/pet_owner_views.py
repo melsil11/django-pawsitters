@@ -14,11 +14,11 @@ class PetOwnersView(generics.ListCreateAPIView):
     def get(self, request):
         """Index request"""
         # Get all the pet owners:
-        # pet owners = pet_owner.objects.all()
+        pet_owners = PetOwner.objects.all()
         # Filter the owner, so you can only see your owned pets
-        petowners = PetOwner.objects.filter(owner=request.user.id)
+        # petowners = PetOwner.objects.filter(owner=request.user.id)
         # Run the data through the serializer
-        data = PetOwnerSerializer(petowners, many=True).data
+        data = PetOwnerSerializer(pet_owners, many=True).data
         return Response({ 'pet_owners': data })
 
     def post(self, request):
