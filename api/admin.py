@@ -6,7 +6,7 @@ from .models.mango import Mango
 from .models.booking import Booking
 from .models.pet_owner import PetOwner
 from .models.pet_sitter import PetSitter
-from .models.pet_type import PetTypes
+from .models.pet_type import PetType
 from .models.review import Review
 
 class UserAdmin(BaseUserAdmin):
@@ -49,4 +49,4 @@ admin.site.register(PetSitter)
 admin.site.register(PetOwner)
 admin.site.register(Booking)
 admin.site.register(Review)
-admin.site.register(PetTypes)
+admin.site.register(PetType)
