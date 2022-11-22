@@ -12,7 +12,7 @@ class ReviewsView(generics.ListCreateAPIView):
     serializer_class = ReviewSerializer
     def get(self, request):
         """Index request"""
-        reviews = Reviews.objects.filter(owner=request.user.id)
+        reviews = Review.objects.filter(owner=request.user.id)
         data = ReviewSerializer(reviews, many=True).data
         serializer = ReviewMadeSerializer
         return Response({ 'reviews': data }) 
