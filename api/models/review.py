@@ -14,7 +14,7 @@ class Review(models.Model):
       get_user_model(),
       on_delete=models.CASCADE
     )
-    image = models.TextField()
+    image = models.TextField(blank=True)
 
     class Rating (models.IntegerChoices):
         ONE = 1
