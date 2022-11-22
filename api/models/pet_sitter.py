@@ -20,7 +20,6 @@ class PetSitter(models.Model):
     to_date = models.DateField()
     from_time = models.TimeField()
     to_time = models.TimeField()
-    
     medicine = models.BooleanField(default=False)
     image = models.TextField(blank=True)
     owner = models.ForeignKey(

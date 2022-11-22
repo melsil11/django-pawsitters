@@ -2,7 +2,6 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
 from .models.user import User
-from .models.mango import Mango
 from .models.booking import Booking
 from .models.pet_owner import PetOwner
 from .models.pet_sitter import PetSitter
@@ -43,7 +42,6 @@ class UserAdmin(BaseUserAdmin):
 # register the model and tell Django to use the above UserAdmin
 # class to format the pages:
 admin.site.register(User, UserAdmin)
-admin.site.register(Mango)
 admin.site.register(PetSitter)
 admin.site.register(PetOwner)
 admin.site.register(Booking)
