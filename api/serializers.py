@@ -1,17 +1,12 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
-from .models.mango import Mango
 from .models.user import User
 from .models.pet_owner import PetOwner
 from .models.pet_sitter import PetSitter
 from .models.booking import Booking
 from .models.review import Review
 
-class MangoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Mango
-        fields = ('id', 'name', 'color', 'ripe', 'owner')
 
 class PetOwnerSerializer(serializers.ModelSerializer):
     class Meta:
