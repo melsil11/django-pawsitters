@@ -5,7 +5,7 @@
 -- IF YOU HAVE TO DROP AND CREATE THE DB, MIGRATE BEFORE SEEDING
 -- Can a migration be iniated from this file?
 
--- drop and/or database as needed
+-- drop and/or create database as needed
 -- DROP DATABASE pawsitters;
 -- CREATE DATABASE pawsitters;
 
