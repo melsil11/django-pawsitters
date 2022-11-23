@@ -15,12 +15,13 @@ class PetSitter(models.Model):
     small_animal = models.BooleanField(default=False)
     reptile = models.BooleanField(default=False)
     bird = models.BooleanField(default=False)
-    rate = models.IntegerField(default=0)
+    rate = models.DecimalField(max_digits=5, decimal_places=2)
     from_date = models.DateField()
     to_date = models.DateField()
     from_time = models.TimeField()
     to_time = models.TimeField()
     medicine = models.BooleanField(default=False)
+    bio = models.CharField(max_length=300, blank=True)
     image = models.TextField(blank=True)
     owner = models.ForeignKey(
         get_user_model(),
