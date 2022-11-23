@@ -19,8 +19,8 @@ class Booking(models.Model):
     )
     start_day = models.DateField(max_length=8)
     end_day = models.DateField(max_length=8)
-    start_time = models.TimeField(max_length=6)
-    end_time = models.TimeField(max_length=6)
+    start_time = models.TimeField(max_length=4)
+    end_time = models.TimeField(max_length=4)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
