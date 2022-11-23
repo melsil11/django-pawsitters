@@ -1,4 +1,5 @@
 from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.exceptions import PermissionDenied
 from rest_framework import generics, status
@@ -9,7 +10,7 @@ from ..serializers import PetSitterSerializer
 
 # Create your views here.
 class PetSittersView(generics.ListCreateAPIView):
-    permission_classes=(IsAuthenticated,)
+    permission_classes=(IsAuthenticatedOrReadOnly,)
     serializer_class = PetSitterSerializer
     def get(self, request):
         """Index request"""
