@@ -14,12 +14,12 @@ class ReviewsView(generics.ListCreateAPIView):
         """Index request"""
         reviews = Review.objects.filter(owner=request.user.id)
         data = ReviewSerializer(reviews, many=True).data
-        serializer = ReviewMadeSerializer
+        # serializer = ReviewMadeSerializer
         return Response({ 'reviews': data }) 
 
-def post(self, request):
+    def post(self, request):
         """Create request"""
-        serializer = ReviewSerializer
+        # serializer = ReviewSerializer
         request.data['review']['owner'] = request.user.id
         review = ReviewSerializer(data=request.data['review'])
         if review.is_valid():
@@ -33,7 +33,7 @@ class ReviewDetailView(generics.RetrieveUpdateDestroyAPIView):
     def get(self, request, pk):
         """Show request"""
         review = get_object_or_404(Review, pk=pk)
-        serializer = ReviewMadeSerializer(review)
+        # serializer = ReviewMadeSerializer(review)
         if request.user != review.owner:
             raise PermissionDenied('Unauthorized, you do not own this review')
         data = ReviewSerializer(review).data
@@ -50,7 +50,7 @@ class ReviewDetailView(generics.RetrieveUpdateDestroyAPIView):
     def partial_update(self, request, pk):
         """Update Request"""
         review = get_object_or_404(Review, pk=pk)
-        serializer = ReviewSerializer(review, data=request.data)
+        # serializer = ReviewSerializer(review, data=request.data)
         if request.user != review.owner:
             raise PermissionDenied('Unauthorized, you do not own this review')
         request.data['review']['owner'] = request.user.id
