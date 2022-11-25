@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from .user import User
 
 # Create your models here.
 
@@ -16,18 +17,18 @@ class PetSitter(models.Model):
     reptile = models.BooleanField(default=False)
     bird = models.BooleanField(default=False)
     rate = models.DecimalField(max_digits=5, decimal_places=2)
-    from_date = models.DateField()
-    to_date = models.DateField()
+    availability = models.CharField(max_length=100, default='monday', help_text='Days of the week, lower case, separated by a space')
     from_time = models.TimeField()
     to_time = models.TimeField()
     medicine = models.BooleanField(default=False)
     bio = models.CharField(max_length=300, blank=True)
     image = models.TextField(blank=True)
-    owner = models.ForeignKey(
-        get_user_model(),
-        on_delete=models.CASCADE
+    owner = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE,
+        primary_key=True,
     )
-
+    
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
