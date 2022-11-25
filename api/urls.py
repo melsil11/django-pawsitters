@@ -17,7 +17,8 @@ urlpatterns = [
     path('petsitters/', PetSittersView.as_view(), name='pet_sitters' ),
     path('petsitters/<int:pk>/', PetSitterDetailView.as_view(), name='pet_sitters'),
     path('reviews/', ReviewsView.as_view(), name='reviews'),
-    path('reviews/<int:pk>/', ReviewDetailView.as_view(), name='pet_sitters'),
+    path('reviews/<int:pk>/', ReviewDetailView.as_view(), name='review'),
+    # path('reviews/create/<int:pk>/', ReviewCreateView.as_view(), name='review'),
     path('bookings/', BookingsView.as_view(), name='bookings'),
     path('bookings/<int:pk>/', BookingDetailView.as_view(), name='bookings')
 

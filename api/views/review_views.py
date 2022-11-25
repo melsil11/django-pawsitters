@@ -1,5 +1,5 @@
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework.exceptions import PermissionDenied
 from rest_framework import generics, status
 from django.shortcuts import get_object_or_404
@@ -8,7 +8,7 @@ from ..models.review import Review
 from ..serializers import ReviewSerializer, ReviewMadeSerializer
 
 class ReviewsView(generics.ListCreateAPIView):
-    permission_classes=(IsAuthenticated,)
+    permission_classes=(IsAuthenticatedOrReadOnly,)
     serializer_class = ReviewSerializer
     def get(self, request):
         """Index request"""
@@ -17,19 +17,10 @@ class ReviewsView(generics.ListCreateAPIView):
         # serializer = ReviewMadeSerializer
         return Response({ 'reviews': data }) 
 
-    def post(self, request):
-        """Create request"""
-        # serializer = ReviewSerializer
-        request.data['review']['owner'] = request.user.id
-        review = ReviewSerializer(data=request.data['review'])
-        if review.is_valid():
-            review.save()
-            return Response({ 'review': review.data }, status=status.HTTP_201_CREATED)
-        return Response(review.errors, status=status.HTTP_400_BAD_REQUEST)     
-
-class ReviewDetailView(generics.RetrieveUpdateDestroyAPIView):
+class ReviewDetailView(generics.RetrieveUpdateDestroyAPIView, generics.CreateAPIView):
     serializer_class = ReviewSerializer
     permission_classes=(IsAuthenticated,)
+    
     def get(self, request, pk):
         """Show request"""
         review = get_object_or_404(Review, pk=pk)
@@ -59,3 +50,16 @@ class ReviewDetailView(generics.RetrieveUpdateDestroyAPIView):
             data.save()
             return Response(status=status.HTTP_204_NO_CONTENT)
         return Response(data.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def post(self, request, pk):
+        print(request.data)
+        print('this is a test')
+        """Create request"""
+        # serializer = ReviewMadeSerializer
+        review = get_object_or_404(Review, pk=pk)
+        request.data['review']['owner'] = request.user.id
+        review = ReviewSerializer(data=request.data['review'])
+        if review.is_valid():
+            review.save()
+            return Response({ 'review': review.data }, status=status.HTTP_201_CREATED)
+        return Response(review.errors, status=status.HTTP_400_BAD_REQUEST) 
