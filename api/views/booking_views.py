@@ -1,8 +1,8 @@
-from django.shortcuts import get_object_or_404
-from rest_framework import generics, status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.exceptions import PermissionDenied
+from rest_framework import generics, status
+from django.shortcuts import get_object_or_404
 
 from ..models.booking import Booking
 from ..serializers import BookingSerializer, BookingBookedSerializer
@@ -13,12 +13,10 @@ class BookingsView(generics.ListCreateAPIView):
     serializer_class = BookingSerializer
     def get(self, request):
         """Index request"""
-        # Get all the bookings:
-        bookings = Booking.objects.all()
         # Filter the bookings by owner, so you can only see your owned bookings
         bookings = Booking.objects.filter(owner=request.user.id)
         # Run the data through the serializer
-        data = BookingBookedSerializer(bookings, many=True).data
+        data = BookingBookedSerializer(bookings, many=False).data
         return Response({ 'bookings': data })
 
     def post(self, request):
@@ -36,6 +34,7 @@ class BookingsView(generics.ListCreateAPIView):
         return Response(booking.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class BookingDetailView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = BookingSerializer
     permission_classes=(IsAuthenticated,)
     def get(self, request, pk):
         """Show request"""
