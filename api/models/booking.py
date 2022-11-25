@@ -17,6 +17,10 @@ class Booking(models.Model):
         on_delete=models.CASCADE,
         related_name='sitter_booking'
     )
+    owner = models.ForeignKey(
+      get_user_model(),
+      on_delete=models.CASCADE
+    )
     start_day = models.DateField(max_length=8)
     end_day = models.DateField(max_length=8)
     start_time = models.TimeField(max_length=4)

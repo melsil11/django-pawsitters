@@ -9,14 +9,14 @@ from ..serializers import BookingSerializer, BookingBookedSerializer
 
 # Create your views here.
 class BookingsView(generics.ListCreateAPIView):
-    permission_classes=(IsAuthenticated,)
+    # permission_classes=(IsAuthenticated,)
     serializer_class = BookingSerializer
     def get(self, request):
         """Index request"""
         # Filter the bookings by owner, so you can only see your owned bookings
         bookings = Booking.objects.filter(owner=request.user.id)
         # Run the data through the serializer
-        data = BookingBookedSerializer(bookings, many=False).data
+        data = BookingSerializer(bookings, many=False).data
         return Response({ 'bookings': data })
 
     def post(self, request):
@@ -45,7 +45,7 @@ class BookingDetailView(generics.RetrieveUpdateDestroyAPIView):
             raise PermissionDenied('Unauthorized, you do not own this booking')
 
         # Run the data through the serializer so it's formatted
-        data = BookingBookedSerializer(booking).data
+        data = BookingSerializer(booking).data
         return Response({ 'booking': data })
 
     def delete(self, request, pk):
