@@ -1,5 +1,5 @@
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework.exceptions import PermissionDenied
 from rest_framework import generics, status
 from django.shortcuts import get_object_or_404
@@ -8,7 +8,7 @@ from ..models.review import Review
 from ..serializers import ReviewSerializer, ReviewMadeSerializer
 
 class ReviewsView(generics.ListCreateAPIView):
-    permission_classes=(IsAuthenticated,)
+    permission_classes=(IsAuthenticatedOrReadOnly,)
     serializer_class = ReviewSerializer
     def get(self, request):
         """Index request"""
@@ -17,9 +17,14 @@ class ReviewsView(generics.ListCreateAPIView):
         # serializer = ReviewMadeSerializer
         return Response({ 'reviews': data }) 
 
+class ReviewCreateView(generics.CreateAPIView):
+    permission_classes=(IsAuthenticated,)
+    serializer_class = ReviewSerializer
     def post(self, request):
+        print(request)
+        print('this is a test')
         """Create request"""
-        # serializer = ReviewSerializer
+        # serializer = ReviewMadeSerializer
         request.data['review']['owner'] = request.user.id
         review = ReviewSerializer(data=request.data['review'])
         if review.is_valid():
@@ -30,6 +35,7 @@ class ReviewsView(generics.ListCreateAPIView):
 class ReviewDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ReviewSerializer
     permission_classes=(IsAuthenticated,)
+    
     def get(self, request, pk):
         """Show request"""
         review = get_object_or_404(Review, pk=pk)
