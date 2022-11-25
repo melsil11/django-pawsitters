@@ -16,7 +16,7 @@ class BookingsView(generics.ListCreateAPIView):
         # Filter the bookings by owner, so you can only see your owned bookings
         bookings = Booking.objects.filter(owner=request.user.id)
         # Run the data through the serializer
-        data = BookingSerializer(bookings, many=True).data
+        data = BookingBookedSerializer(bookings, many=True).data
         return Response({ 'bookings': data })
 
     def post(self, request):
@@ -40,7 +40,8 @@ class BookingDetailView(generics.RetrieveUpdateDestroyAPIView):
         """Show request"""
         # Locate the booking to show
         booking = get_object_or_404(Booking, pk=pk)
-        # Only want to show owned bookings?
+        data = BookingBookedSerializer(booking)
+        # Only want to show owned bookings
         if request.user != booking.owner:
             raise PermissionDenied('Unauthorized, you do not own this booking')
 
