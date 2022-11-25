@@ -21,6 +21,7 @@ class Booking(models.Model):
       get_user_model(),
       on_delete=models.CASCADE
     )
+    note = models.CharField(max_length=200)
     start_day = models.DateField(max_length=8)
     end_day = models.DateField(max_length=8)
     start_time = models.TimeField(max_length=4)
