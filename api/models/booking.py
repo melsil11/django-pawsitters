@@ -21,18 +21,21 @@ class Booking(models.Model):
       get_user_model(),
       on_delete=models.CASCADE
     )
+
     note = models.CharField(max_length=200)
+
     start_day = models.DateField(max_length=8)
     end_day = models.DateField(max_length=8)
     start_time = models.TimeField(max_length=4)
     end_time = models.TimeField(max_length=4)
+    note = models.CharField(max_length=100)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         # This must return a string
-        return f"{self.pet_sitter} will be pet-sitting for {self.pet_owner} on {self.start_day} at {self.start_time}."
+        return f"{self.pet_sitter} will be pet-sitting for {self.pet_owner} on {self.start_day} at {self.start_time}. {self.note}"
 
     def as_dict(self):
         """Returns dictionary version of Booking models"""
