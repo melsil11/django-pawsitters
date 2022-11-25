@@ -3,7 +3,7 @@ from django.urls import path
 from .views.user_views import SignUp, SignIn, SignOut, ChangePassword
 from .views.pet_owner_views import PetOwnersView, PetOwnerDetailView
 from .views.pet_sitter_views import PetSittersView, PetSitterDetailView
-from .views.review_views import ReviewsView, ReviewDetailView, ReviewCreateView
+from .views.review_views import ReviewsView, ReviewDetailView
 from .views.booking_views import BookingsView, BookingDetailView
 
 urlpatterns = [
@@ -18,7 +18,7 @@ urlpatterns = [
     path('petsitters/<int:pk>/', PetSitterDetailView.as_view(), name='pet_sitters'),
     path('reviews/', ReviewsView.as_view(), name='reviews'),
     path('reviews/<int:pk>/', ReviewDetailView.as_view(), name='review'),
-    path('reviews/create/<int:pk>/', ReviewCreateView.as_view(), name='review'),
+    # path('reviews/create/<int:pk>/', ReviewCreateView.as_view(), name='review'),
     path('bookings/', BookingsView.as_view(), name='bookings'),
     path('bookings/<int:pk>/', BookingDetailView.as_view(), name='bookings')
 
