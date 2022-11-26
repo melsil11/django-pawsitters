@@ -14,11 +14,11 @@ class PetOwner(models.Model):
     )
     
     class Type (models.TextChoices):
-        dog = 'D'
-        cat = 'C'
-        small_animal = 'SA'
-        reptile =  'R'
-        bird = 'B'
+        DOG = 'Dog'
+        CAT = 'Cat'
+        SMALL_ANIMAL = 'Small_Animal'
+        REPTILE =  'Reptile'
+        BIRD = 'Bird'
 
     pet_type = models.TextField(choices=Type.choices)
 
