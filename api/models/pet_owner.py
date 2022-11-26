@@ -1,15 +1,17 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-
+from .user import User
 class PetOwner(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     pet_type = models.CharField(max_length=100)
     pet_name = models.CharField(max_length=100)
     
-    owner = models.ForeignKey(
-      get_user_model(),
-      on_delete=models.CASCADE)
+    owner = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE,
+        primary_key=True,
+    )
     images = models.TextField(blank= True)
     
     # upload = models.ImageField(upload_to ='uploads/')
