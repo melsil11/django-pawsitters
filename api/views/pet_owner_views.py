@@ -24,7 +24,7 @@ class PetOwnersView(generics.ListCreateAPIView):
     def post(self, request):
         """Create request"""
         # Add user to request data object
-        request.data['pet_owners']['owner'] = request.user.id
+        request.data['pet_owner']['owner'] = request.user.id
         # Serialize/create pet owner
         pet_owner = PetOwnerSerializer(data=request.data['pet_owner'])
         # If the pet owner data is valid according to our serializer...
