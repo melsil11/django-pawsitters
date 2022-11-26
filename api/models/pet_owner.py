@@ -4,7 +4,7 @@ from .user import User
 class PetOwner(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
-    pet_type = models.CharField(max_length=100)
+    # pet_type = models.CharField(max_length=100)
     pet_name = models.CharField(max_length=100)
     
     owner = models.OneToOneField(
@@ -12,6 +12,16 @@ class PetOwner(models.Model):
         on_delete=models.CASCADE,
         primary_key=True,
     )
+    
+    class Type (models.TextChoices):
+        dog = 'D'
+        cat = 'C'
+        small_animal = 'SA'
+        reptile =  'R'
+        bird = 'B'
+
+    pet_type = models.TextField(choices=Type.choices)
+
     images = models.TextField(blank= True)
     
     # upload = models.ImageField(upload_to ='uploads/')
