@@ -52,8 +52,7 @@ class ReviewDetailView(generics.RetrieveUpdateDestroyAPIView, generics.CreateAPI
         return Response(data.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def post(self, request, pk):
-        print(request.data)
-        print('this is a test')
+        print('request.data', request.data)
         """Create request"""
         # serializer = ReviewMadeSerializer
         review = get_object_or_404(Review, pk=pk)
