@@ -31,4 +31,3 @@ class PetOwner(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name} {self.pet_type} {self.pet_name} "
-
