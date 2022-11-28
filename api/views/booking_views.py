@@ -9,9 +9,9 @@ from ..serializers import BookingSerializer, BookingBookedSerializer
 
 # The views for Bookings.
 class BookingsView(generics.ListCreateAPIView):
-    permission_classes=(IsAuthenticated)
+    permission_classes=(IsAuthenticated,)
     # permission_classes=(IsAuthenticated,)
-    serializer_class = BookingBookedSerializer
+    serializer_class = BookingSerializer
     def get(self, request):
         """Index request"""
         # Filter the bookings by owner, so you can only see your owned bookings
@@ -22,8 +22,7 @@ class BookingsView(generics.ListCreateAPIView):
 
     def post(self, request):
         """Create request"""
-        print(request.data)
-        print('this is a test for a post request')
+        print(request.data, '///// request.data ///////')
         # Add user to request data object
         request.data['booking']['owner'] = request.user.id
         # Serialize/create booking
