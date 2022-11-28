@@ -24,11 +24,11 @@ class Booking(models.Model):
 
     note = models.CharField(max_length=200, help_text="Please tell us why you need a pawsitter. Example: 'Going out of town for a few days, need someone to watch my furbaby!'")
 
-    start_day = models.DateField(max_length=8)
-    end_day = models.DateField(max_length=8)
-    start_time = models.TimeField(max_length=4)
-    end_time = models.TimeField(max_length=4)
-    note = models.CharField(max_length=100)
+    start_day = models.DateField()
+    end_day = models.DateField()
+    start_time = models.TimeField()
+    end_time = models.TimeField()
+    note = models.CharField(max_length=100, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
