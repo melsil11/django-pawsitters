@@ -7,10 +7,11 @@ from django.shortcuts import get_object_or_404
 from ..models.booking import Booking
 from ..serializers import BookingSerializer, BookingBookedSerializer
 
-# Create your views here.
+# The views for Bookings.
 class BookingsView(generics.ListCreateAPIView):
+    permission_classes=(IsAuthenticated)
     # permission_classes=(IsAuthenticated,)
-    serializer_class = BookingSerializer
+    serializer_class = BookingBookedSerializer
     def get(self, request):
         """Index request"""
         # Filter the bookings by owner, so you can only see your owned bookings
@@ -21,6 +22,8 @@ class BookingsView(generics.ListCreateAPIView):
 
     def post(self, request):
         """Create request"""
+        print(request.data)
+        print('this is a test for a post request')
         # Add user to request data object
         request.data['booking']['owner'] = request.user.id
         # Serialize/create booking
