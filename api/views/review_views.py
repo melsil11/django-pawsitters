@@ -9,11 +9,11 @@ from ..serializers import ReviewSerializer, ReviewMadeSerializer
 
 class ReviewsView(generics.ListCreateAPIView):
     permission_classes=(IsAuthenticatedOrReadOnly,)
-    serializer_class = ReviewSerializer
+    serializer_class = ReviewMadeSerializer
     def get(self, request):
         """Index request"""
         reviews = Review.objects.filter(owner=request.user.id)
-        data = ReviewSerializer(reviews, many=True).data
+        data = ReviewMadeSerializer(reviews, many=True).data
         # serializer = ReviewMadeSerializer
         return Response({ 'reviews': data }) 
 
@@ -24,7 +24,6 @@ class ReviewDetailView(generics.RetrieveUpdateDestroyAPIView, generics.CreateAPI
     def get(self, request, pk):
         """Show request"""
         review = get_object_or_404(Review, pk=pk)
-        # serializer = ReviewMadeSerializer(review)
         if request.user != review.owner:
             raise PermissionDenied('Unauthorized, you do not own this review')
         data = ReviewSerializer(review).data
@@ -52,8 +51,7 @@ class ReviewDetailView(generics.RetrieveUpdateDestroyAPIView, generics.CreateAPI
         return Response(data.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def post(self, request, pk):
-        print(request.data)
-        print('this is a test')
+        print('request.data', request.data)
         """Create request"""
         # serializer = ReviewMadeSerializer
         review = get_object_or_404(Review, pk=pk)
