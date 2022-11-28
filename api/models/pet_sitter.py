@@ -21,7 +21,7 @@ class PetSitter(models.Model):
     from_time = models.TimeField()
     to_time = models.TimeField()
     medicine = models.BooleanField(default=False)
-    bio = models.CharField(max_length=300, blank=True)
+    bio = models.TextField(blank=True)
     image = models.TextField(blank=True)
     owner = models.OneToOneField(
         User,
