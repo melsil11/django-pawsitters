@@ -5,17 +5,11 @@ from .pet_owner import PetOwner
 
 
 class Review(models.Model):
-    comment = models.CharField(max_length=360)
-    pet_sitter = models.ForeignKey(PetSitter,
-      on_delete=models.CASCADE)
-    pet_owner = models.ForeignKey(PetOwner,
-      on_delete=models.CASCADE)
     owner = models.ForeignKey(
       get_user_model(),
       on_delete=models.CASCADE
     )
-    image = models.TextField(blank=True)
-
+    comment = models.CharField(max_length=360)
     class Rating (models.IntegerChoices):
         ONE = 1
         TWO = 2
@@ -24,6 +18,13 @@ class Review(models.Model):
         FIVE = 5             
 
     rating = models.IntegerField(choices=Rating.choices)
+    image = models.TextField(blank=True)
+    pet_sitter = models.ForeignKey(PetSitter,
+      on_delete=models.CASCADE)
+    pet_owner = models.ForeignKey(PetOwner,
+      on_delete=models.CASCADE)
+    owner_email = models.TextField(max_length=100,blank=True )
+      
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

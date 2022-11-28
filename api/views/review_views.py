@@ -14,10 +14,19 @@ class ReviewsView(generics.ListCreateAPIView):
         """Index request"""
         reviews = Review.objects.filter(owner=request.user.id)
         data = ReviewMadeSerializer(reviews, many=True).data
-        # serializer = ReviewMadeSerializer
         return Response({ 'reviews': data }) 
 
-class ReviewDetailView(generics.RetrieveUpdateDestroyAPIView, generics.CreateAPIView):
+    def post(self, request):
+        print('request.data', request.data)
+        """Create request"""
+        request.data['review']['owner'] = request.user.id
+        review = ReviewSerializer(data=request.data['review'])
+        if review.is_valid():
+            review.save()
+            return Response({ 'review': review.data }, status=status.HTTP_201_CREATED)
+        return Response(review.errors, status=status.HTTP_400_BAD_REQUEST) 
+
+class ReviewDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ReviewSerializer
     permission_classes=(IsAuthenticated,)
     
@@ -26,7 +35,7 @@ class ReviewDetailView(generics.RetrieveUpdateDestroyAPIView, generics.CreateAPI
         review = get_object_or_404(Review, pk=pk)
         if request.user != review.owner:
             raise PermissionDenied('Unauthorized, you do not own this review')
-        data = ReviewSerializer(review).data
+        data = ReviewMadeSerializer(review).data
         return Response({ 'review': data })
 
     def delete(self, request, pk):
@@ -50,14 +59,3 @@ class ReviewDetailView(generics.RetrieveUpdateDestroyAPIView, generics.CreateAPI
             return Response(status=status.HTTP_204_NO_CONTENT)
         return Response(data.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def post(self, request, pk):
-        print('request.data', request.data)
-        """Create request"""
-        # serializer = ReviewMadeSerializer
-        review = get_object_or_404(Review, pk=pk)
-        request.data['review']['owner'] = request.user.id
-        review = ReviewSerializer(data=request.data['review'])
-        if review.is_valid():
-            review.save()
-            return Response({ 'review': review.data }, status=status.HTTP_201_CREATED)
-        return Response(review.errors, status=status.HTTP_400_BAD_REQUEST) 
