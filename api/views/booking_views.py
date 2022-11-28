@@ -10,7 +10,6 @@ from ..serializers import BookingSerializer, BookingBookedSerializer
 # The views for Bookings.
 class BookingsView(generics.ListCreateAPIView):
     permission_classes=(IsAuthenticated,)
-    # permission_classes=(IsAuthenticated,)
     serializer_class = BookingSerializer
     def get(self, request):
         """Index request"""
