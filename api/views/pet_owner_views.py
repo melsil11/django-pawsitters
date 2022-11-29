@@ -3,6 +3,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.exceptions import PermissionDenied
 from rest_framework import generics, status
 from django.shortcuts import get_object_or_404
+# trying to get no object
+from django.core.exceptions import ObjectDoesNotExist
 
 from ..models.pet_owner import PetOwner
 from ..serializers import PetOwnerSerializer
@@ -40,10 +42,16 @@ class PetOwnerDetailView(generics.RetrieveUpdateDestroyAPIView):
     def get(self, request, pk):
         """Show request"""
         # Locate the pet owner to show
-        pet_owner = get_object_or_404(PetOwner, pk=pk)
+        try:
+            pet_owner = PetOwner.objects.get(pk=pk)
+            if request.user != pet_owner.owner:
+                raise PermissionDenied('Unauthorized, you do not own this pet owner')
+        except ObjectDoesNotExist:
+            pet_owner = None
+
+        # pet_owner = PetOwner.objects.get(pk=pk)
         # Only want to show owned pets?
-        if request.user != pet_owner.owner:
-            raise PermissionDenied('Unauthorized, you do not own this pet owner')
+      
 
         # Run the data through the serializer so it's formatted
         data = PetOwnerSerializer(pet_owner).data
