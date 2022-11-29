@@ -8,7 +8,7 @@ from ..models.review import Review
 from ..serializers import ReviewSerializer, ReviewMadeSerializer
 
 class ReviewsView(generics.ListCreateAPIView):
-    permission_classes=(IsAuthenticatedOrReadOnly,)
+    permission_classes=(IsAuthenticated,)
     serializer_class = ReviewMadeSerializer
     def get(self, request):
         """Index request"""
@@ -20,7 +20,9 @@ class ReviewsView(generics.ListCreateAPIView):
         print('request.data', request.data)
         """Create request"""
         request.data['review']['owner'] = request.user.id
+        print('user', request.user.id)
         review = ReviewSerializer(data=request.data['review'])
+        print('review information', review)
         if review.is_valid():
             review.save()
             return Response({ 'review': review.data }, status=status.HTTP_201_CREATED)
