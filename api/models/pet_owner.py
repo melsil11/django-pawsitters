@@ -6,7 +6,7 @@ class PetOwner(models.Model):
     last_name = models.CharField(max_length=100)
     # pet_type = models.CharField(max_length=100)
     pet_name = models.CharField(max_length=100)
-    
+    pet_bio = models.TextField(max_length=400, blank=True)
     owner = models.OneToOneField(
         User,
         on_delete=models.CASCADE,
@@ -30,5 +30,5 @@ class PetOwner(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name} {self.pet_type} {self.pet_name} "
+        return f"{self.first_name} {self.last_name} {self.pet_type} {self.pet_name} {self.pet_bio} "
 
