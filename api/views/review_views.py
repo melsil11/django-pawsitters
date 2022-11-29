@@ -22,7 +22,7 @@ class ReviewsView(generics.ListCreateAPIView):
         request.data['review']['owner'] = request.user.id
         print('user', request.user.id)
         review = ReviewSerializer(data=request.data['review'])
-        print('review information', review)
+        # print('review information', review)
         if review.is_valid():
             review.save()
             return Response({ 'review': review.data }, status=status.HTTP_201_CREATED)
