@@ -34,5 +34,5 @@ class PetSitter(models.Model):
 
     def __str__(self):
         # This must return a string
-        return f"Pet Sitter: {self.first_name} {self.last_name}"
+        return f"{self.first_name} {self.last_name}"
 
