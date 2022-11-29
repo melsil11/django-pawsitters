@@ -22,7 +22,7 @@ class Booking(models.Model):
       on_delete=models.CASCADE
     )
 
-    note = models.CharField(max_length=200, help_text="Please tell us why you need a pawsitter. Example: 'Going out of town for a few days, need someone to watch my furbaby!'")
+    note = models.CharField(max_length=200, help_text="Please tell us the reason for your request")
 
     start_day = models.DateField()
     end_day = models.DateField()
