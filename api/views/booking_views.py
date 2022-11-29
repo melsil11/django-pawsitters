@@ -74,7 +74,7 @@ class BookingDetailView(generics.RetrieveUpdateDestroyAPIView):
         # Ensure the owner field is set to the current user's ID
         request.data['booking']['owner'] = request.user.id
         # Validate updates with serializer
-        data = BookingSerializer(booking, data=request.data, partial=True)
+        data = BookingSerializer(booking, data=request.data['booking'], partial=True)
         # booking = BookingSerializer(data=request.data['booking'])
         if data.is_valid():
             # Save & send a 204 no content
