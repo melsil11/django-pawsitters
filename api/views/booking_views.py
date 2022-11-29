@@ -66,6 +66,7 @@ class BookingDetailView(generics.RetrieveUpdateDestroyAPIView):
         # Locate Booking
         # get_object_or_404 returns a object representation of our Booking
         booking = get_object_or_404(Booking, pk=pk)
+        print(booking, 'booking')
         # Check the booking's owner against the user making this request
         if request.user != booking.owner:
             raise PermissionDenied('Unauthorized, you do not own this booking')
@@ -73,7 +74,8 @@ class BookingDetailView(generics.RetrieveUpdateDestroyAPIView):
         # Ensure the owner field is set to the current user's ID
         request.data['booking']['owner'] = request.user.id
         # Validate updates with serializer
-        data = BookingSerializer(booking, data=request.data['booking'], partial=True)
+        data = BookingSerializer(booking, data=request.data, partial=True)
+        # booking = BookingSerializer(data=request.data['booking'])
         if data.is_valid():
             # Save & send a 204 no content
             data.save()
