@@ -21,7 +21,7 @@ class PetSitter(models.Model):
     from_time = models.TimeField()
     to_time = models.TimeField()
     medicine = models.BooleanField(default=False)
-    bio = models.CharField(max_length=300, blank=True)
+    bio = models.TextField(blank=True)
     image = models.TextField(blank=True)
     owner = models.OneToOneField(
         User,
@@ -34,5 +34,5 @@ class PetSitter(models.Model):
 
     def __str__(self):
         # This must return a string
-        return f"Pet Sitter: {self.first_name} {self.last_name}"
+        return f"{self.first_name} {self.last_name}"
 

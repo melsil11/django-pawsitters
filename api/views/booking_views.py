@@ -53,6 +53,7 @@ class BookingDetailView(generics.RetrieveUpdateDestroyAPIView):
     def delete(self, request, pk):
         """Delete request"""
         # Locate booking to delete
+        print('THIS IS PK', pk)
         booking = get_object_or_404(Booking, pk=pk)
         # Check the booking's owner against the user making this request
         if request.user != booking.owner:
@@ -74,7 +75,7 @@ class BookingDetailView(generics.RetrieveUpdateDestroyAPIView):
         # Ensure the owner field is set to the current user's ID
         request.data['booking']['owner'] = request.user.id
         # Validate updates with serializer
-        data = BookingSerializer(booking, data=request.data['booking'], partial=True)
+        data = BookingBookedSerializer(booking, data=request.data['booking'], partial=True)
         # booking = BookingSerializer(data=request.data['booking'])
         if data.is_valid():
             # Save & send a 204 no content
