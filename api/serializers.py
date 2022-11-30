@@ -37,7 +37,7 @@ class ReviewSerializer(serializers.ModelSerializer):
 
 class ReviewMadeSerializer(serializers.ModelSerializer):
     pet_owner = serializers.StringRelatedField()
-    pet_sitter = serializers.StringRelatedField()
+    pet_sitter = PetSitterSerializer(many = False)
     class Meta:
         fields = '__all__'
         model = Review
