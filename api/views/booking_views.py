@@ -14,7 +14,7 @@ class BookingsView(generics.ListCreateAPIView):
     def get(self, request):
         """Index request"""
         # Filter the bookings by owner, so you can only see your owned bookings
-        bookings = Booking.objects.filter(owner=request.user.id)
+        bookings = Booking.objects.filter(owner=request.user.id) | Booking.objects.filter(pet_sitter=request.user.id)
         # Run the data through the serializer
         data = BookingBookedSerializer(bookings, many=True).data
         return Response({ 'bookings': data })
