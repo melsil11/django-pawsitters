@@ -8,11 +8,11 @@ from ..models.review import Review
 from ..serializers import ReviewSerializer, ReviewMadeSerializer
 
 class ReviewsView(generics.ListCreateAPIView):
-    permission_classes=(IsAuthenticated,)
+    permission_classes=(IsAuthenticatedOrReadOnly,)
     serializer_class = ReviewMadeSerializer
     def get(self, request):
         """Index request"""
-        reviews = Review.objects.filter(owner=request.user.id) | Review.objects.filter(pet_sitter=request.user.id)
+        reviews = Review.objects.all()
         data = ReviewMadeSerializer(reviews, many=True).data
         return Response({ 'reviews': data }) 
 
