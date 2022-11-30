@@ -10,6 +10,7 @@ class Review(models.Model):
       on_delete=models.CASCADE
     )
     comment = models.CharField(max_length=360)
+    
     class Rating (models.IntegerChoices):
         ONE = 1
         TWO = 2
@@ -18,6 +19,7 @@ class Review(models.Model):
         FIVE = 5             
 
     rating = models.IntegerField(choices=Rating.choices)
+
     image = models.TextField(blank=True)
     pet_sitter = models.ForeignKey(PetSitter,
       on_delete=models.CASCADE)
