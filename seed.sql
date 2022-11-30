@@ -96,7 +96,7 @@ VALUES ('Tombo', 'Piccolo', 'Good boy', 'The Goodest of Boys', '1', 'dog', 'http
 
 -- 2
 INSERT INTO api_petowner(first_name, last_name, pet_name, pet_bio, owner_id, pet_type, images, created_at, updated_atfirst_name, last_name, pet_name, pet_bio, owner_id, pet_type, images, created_at, updated_at) 
-VALUES ('Agnes', 'Nutter', 'Kitty', 'A floofy baby', '5', 'cat' 'https://imgur.com/gallery/hI26P6E', now(), now());
+VALUES ('Agnes', 'Nutter', 'Kitty', 'A floofy baby', '5', 'cat', 'https://imgur.com/gallery/hI26P6E', now(), now());
 
 -- 3
 INSERT INTO api_petowner(first_name, last_name, pet_name, pet_bio, owner_id, pet_type, images, created_at, updated_at) 
@@ -104,7 +104,7 @@ VALUES ('Beckett', 'Mariner', 'Kitty', 'The most amazing being you will ever mee
 
 -- 4
 INSERT INTO api_petowner(first_name, last_name, pet_name, pet_bio, owner_id, pet_type, images, created_at, updated_at) 
-VALUES ('Lando', 'Calrisian', 'Sherbert', 'A beautiful bird full of character and pizazz', '9' 'bird', 'https://upload.wikimedia.org/wikipedia/en/c/cb/Lando6-2.jpg', now(), now());
+VALUES ('Lando', 'Calrisian', 'Sherbert', 'A beautiful bird full of character and pizazz', '9', 'bird', 'https://upload.wikimedia.org/wikipedia/en/c/cb/Lando6-2.jpg', now(), now());
 
 -- 5
 INSERT INTO api_petowner(first_name, last_name, pet_name, pet_bio, owner_id, pet_type, images, created_at, updated_at) 
@@ -117,20 +117,20 @@ VALUES ('Admin', 'Test', 'Admiral', 'A very real gerbil that is very cute', '10'
 -- -- -- //////////
 -- -- -- bookings
 -- -- -- //////////
-INSERT INTO api_booking(start_day, end_day, start_time, end_time, note, created_at, updated_at, pet_owner_id, pet_sitter_id)
-VALUES('12/01/2022', '12/20/2022', '12:00:00', '12:30:00', 'I am visiting my mother for the holidays' now(), now(), '1', '1');
+INSERT INTO api_booking(start_day, end_day, start_time, end_time, note, created_at, updated_at, pet_owner_id, pet_sitter_id, owner_id)
+VALUES('12/01/2022', '12/20/2022', '12:00:00', '12:30:00', 'I am visiting my mother for the holidays', now(), now(), '1', '1', '1');
 
-INSERT INTO api_booking(start_day, end_day, start_time, end_time, note, created_at, updated_at, pet_owner_id, pet_sitter_id)
-VALUES('12/01/2022', '12/20/2022', '12:00:00', '12:30:00', 'The ususal. Traveling to a dangerous planet with the Federation - need someone to watch my baby.' now(), now(), '3', '3');
+INSERT INTO api_booking(start_day, end_day, start_time, end_time, note, created_at, updated_at, pet_owner_id, pet_sitter_id, owner_id)
+VALUES('12/01/2022', '12/20/2022', '12:00:00', '12:30:00', 'The ususal. Traveling to a dangerous planet with the Federation - need someone to watch my baby.', now(), now(), '7', '3', '6');
 
-INSERT INTO api_booking(start_day, end_day, start_time, end_time, note, created_at, updated_at, pet_owner_id, pet_sitter_id)
-VALUES('01/01/2023', '01/20/2023', '12:00:00', '12:30:00', 'I have an important mission offworld and I need someone to care for my precious Sherbert' now(), now(), '4', '3');
+INSERT INTO api_booking(start_day, end_day, start_time, end_time, note, created_at, updated_at, pet_owner_id, pet_sitter_id, owner_id)
+VALUES('01/01/2023', '01/20/2023', '12:00:00', '12:30:00', 'I have an important mission offworld and I need someone to care for my precious Sherbert', now(), now(), '4', '3', '9');
 
-INSERT INTO api_booking(start_day, end_day, start_time, end_time, note, created_at, updated_at, pet_owner_id, pet_sitter_id)
-VALUES('01/01/2023', '01/20/2023', '12:00:00', '12:30:00', 'I have a business trip.' now(), now(), '5', '4');
+INSERT INTO api_booking(start_day, end_day, start_time, end_time, note, created_at, updated_at, pet_owner_id, pet_sitter_id, owner_id)
+VALUES('01/01/2023', '01/20/2023', '12:00:00', '12:30:00', 'I have a business trip.', now(), now(), '10', '4', '10');
 
-INSERT INTO api_booking(start_day, end_day, start_time, end_time, note, created_at, updated_at, pet_owner_id, pet_sitter_id)
-VALUES('02/01/2023', '02/20/2023', '12:00:00', '12:30:00', 'I have an important meeting to go to for a couple weeks. Please watch after my adorable floof' now(), now(), '2', '5');
+INSERT INTO api_booking(start_day, end_day, start_time, end_time, note, created_at, updated_at, pet_owner_id, pet_sitter_id, owner_id)
+VALUES('02/01/2023', '02/20/2023', '12:00:00', '12:30:00', 'I have an important meeting to go to for a couple weeks. Please watch after my adorable floof', now(), now(), '2', '5', '5');
 
 -- SELECT * FROM api_booking;
 
