@@ -17,10 +17,10 @@ class ReviewsView(generics.ListCreateAPIView):
         return Response({ 'reviews': data }) 
 
     def post(self, request):
-        print('request.data', request.data)
+        print('this is the request.data', request.data)
         """Create request"""
         request.data['review']['owner'] = request.user.id
-        print('user', request.user.id)
+        print('this is the user', request.user.id)
         review = ReviewSerializer(data=request.data['review'])
         # print('review information', review)
         if review.is_valid():
