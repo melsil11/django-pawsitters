@@ -22,8 +22,6 @@ class Booking(models.Model):
       on_delete=models.CASCADE
     )
 
-    note = models.CharField(max_length=200, help_text="Please tell us the reason for your request")
-
     start_day = models.DateField()
     end_day = models.DateField()
     start_time = models.TimeField()

@@ -14,7 +14,7 @@ class BookingsView(generics.ListCreateAPIView):
     def get(self, request):
         """Index request"""
         # Filter the bookings by owner, so you can only see your owned bookings
-        bookings = Booking.objects.filter(owner=request.user.id)
+        bookings = Booking.objects.filter(owner=request.user.id) | Booking.objects.filter(pet_sitter=request.user.id)
         # Run the data through the serializer
         data = BookingBookedSerializer(bookings, many=True).data
         return Response({ 'bookings': data })
@@ -53,9 +53,9 @@ class BookingDetailView(generics.RetrieveUpdateDestroyAPIView):
     def delete(self, request, pk):
         """Delete request"""
         # Locate booking to delete
-        print('THIS IS PK', pk)
         booking = get_object_or_404(Booking, pk=pk)
         # Check the booking's owner against the user making this request
+        # unable to add  | request.user != booking.pet_sitter at this time
         if request.user != booking.owner:
             raise PermissionDenied('Unauthorized, you do not own this booking')
         # Only delete if the user owns the  booking
@@ -67,8 +67,8 @@ class BookingDetailView(generics.RetrieveUpdateDestroyAPIView):
         # Locate Booking
         # get_object_or_404 returns a object representation of our Booking
         booking = get_object_or_404(Booking, pk=pk)
-        print(booking, 'booking')
         # Check the booking's owner against the user making this request
+        # unable to add  | request.user != booking.pet_sitter at this time
         if request.user != booking.owner:
             raise PermissionDenied('Unauthorized, you do not own this booking')
 
