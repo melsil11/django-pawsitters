@@ -42,6 +42,11 @@ class ReviewMadeSerializer(serializers.ModelSerializer):
         fields = '__all__'
         model = Review
 
+class ReviewEditSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ('image', 'rating', 'comment')
+        model = Review
+
 class UserSerializer(serializers.ModelSerializer):
     # This model serializer will be used for User creation
     # The login serializer also inherits from this serializer
