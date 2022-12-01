@@ -95,7 +95,7 @@ INSERT INTO api_petowner(first_name, last_name, pet_name, pet_bio, owner_id, pet
 VALUES ('Tombo', 'Piccolo', 'Good boy', 'The Goodest of Boys', '1', 'dog', 'https://imgur.com/gallery/xtoLyW2', now(), now());
 
 -- 2
-INSERT INTO api_petowner(first_name, last_name, pet_name, pet_bio, owner_id, pet_type, images, created_at, updated_atfirst_name, last_name, pet_name, pet_bio, owner_id, pet_type, images, created_at, updated_at) 
+INSERT INTO api_petowner(first_name, last_name, pet_name, pet_bio, owner_id, pet_type, images, created_at, updated_at) 
 VALUES ('Agnes', 'Nutter', 'Kitty', 'A floofy baby', '5', 'cat', 'https://imgur.com/gallery/hI26P6E', now(), now());
 
 -- 3
@@ -118,19 +118,19 @@ VALUES ('Admin', 'Test', 'Admiral', 'A very real gerbil that is very cute', '10'
 -- -- -- bookings
 -- -- -- //////////
 INSERT INTO api_booking(start_day, end_day, start_time, end_time, note, created_at, updated_at, pet_owner_id, pet_sitter_id, owner_id)
-VALUES('12/01/2022', '12/20/2022', '12:00:00', '12:30:00', 'I am visiting my mother for the holidays', now(), now(), '1', '1', '1');
+VALUES('12/01/2022', '12/20/2022', '12:00:00', '12:30:00', 'I am visiting my mother for the holidays', now(), now(), '1', '2', '1');
 
 INSERT INTO api_booking(start_day, end_day, start_time, end_time, note, created_at, updated_at, pet_owner_id, pet_sitter_id, owner_id)
-VALUES('12/01/2022', '12/20/2022', '12:00:00', '12:30:00', 'The ususal. Traveling to a dangerous planet with the Federation - need someone to watch my baby.', now(), now(), '7', '3', '6');
+VALUES('12/01/2022', '12/20/2022', '12:00:00', '12:30:00', 'The ususal. Traveling to a dangerous planet with the Federation - need someone to watch my baby.', now(), now(), '7', '6', '6');
 
 INSERT INTO api_booking(start_day, end_day, start_time, end_time, note, created_at, updated_at, pet_owner_id, pet_sitter_id, owner_id)
-VALUES('01/01/2023', '01/20/2023', '12:00:00', '12:30:00', 'I have an important mission offworld and I need someone to care for my precious Sherbert', now(), now(), '4', '3', '9');
+VALUES('01/01/2023', '01/20/2023', '12:00:00', '12:30:00', 'I have an important mission offworld and I need someone to care for my precious Sherbert', now(), now(), '9', '8', '9');
 
 INSERT INTO api_booking(start_day, end_day, start_time, end_time, note, created_at, updated_at, pet_owner_id, pet_sitter_id, owner_id)
 VALUES('01/01/2023', '01/20/2023', '12:00:00', '12:30:00', 'I have a business trip.', now(), now(), '10', '4', '10');
 
 INSERT INTO api_booking(start_day, end_day, start_time, end_time, note, created_at, updated_at, pet_owner_id, pet_sitter_id, owner_id)
-VALUES('02/01/2023', '02/20/2023', '12:00:00', '12:30:00', 'I have an important meeting to go to for a couple weeks. Please watch after my adorable floof', now(), now(), '2', '5', '5');
+VALUES('02/01/2023', '02/20/2023', '12:00:00', '12:30:00', 'I have an important meeting to go to for a couple weeks. Please watch after my adorable floof', now(), now(), '10', '2', '10');
 
 -- SELECT * FROM api_booking;
 
@@ -140,19 +140,19 @@ VALUES('02/01/2023', '02/20/2023', '12:00:00', '12:30:00', 'I have an important 
 -- -- -- reviews
 -- -- -- //////////
 INSERT INTO api_review(comment, image, rating, created_at, updated_at, owner_id, pet_owner_id, pet_sitter_id, owner_email)
-VALUES('Very sweet, very helpful - maybe a little too helpful. Helped me fix my old fire stove!', 'https://imgur.com/gallery/mBoP1gz', '5', now(), now(), '1', '1', '1', 'tombo@t.com');
+VALUES('Very sweet, very helpful - maybe a little too helpful. Helped me fix my old fire stove!', 'https://imgur.com/gallery/mBoP1gz', '5', now(), now(), '1', '1', '2', 'tombo@t.com');
 
 INSERT INTO api_review(comment, image, rating, created_at, updated_at, owner_id, pet_owner_id, pet_sitter_id, owner_email)
-VALUES('Terrible - nearly burned down the house!', 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Sam-Vimes.Discworld.webp', '1', now(), now(), '1', '1', '2', 'tombo@t.com');
+VALUES('Terrible - nearly burned down the house!', 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Sam-Vimes.Discworld.webp', '1', now(), now(), '1', '1', '4', 'tombo@t.com');
 
 INSERT INTO api_review(comment, image, rating, created_at, updated_at, owner_id, pet_owner_id, pet_sitter_id, owner_email)
-VALUES('Delightful person! Learned later she was using my residence to solve some crime nearby though.', 'https://pbs.twimg.com/media/EERFy3iXoAEezWd.jpg', '3', now(), now(), '5', '2', '3', 'agnes@a.com');
+VALUES('Delightful person! Learned later she was using my residence to solve some crime nearby though.', 'https://pbs.twimg.com/media/EERFy3iXoAEezWd.jpg', '3', now(), now(), '5', '5', '4', 'agnes@a.com');
 
 INSERT INTO api_review(comment, image, rating, created_at, updated_at, owner_id, pet_owner_id, pet_sitter_id, owner_email)
-VALUES('Amazing human. Followed all my instructions about Kitty to the letter. Would hire again.', 'https://images.squarespace-cdn.com/content/v1/5cc3d1b051f4d40415789cc2/1595578570907-LX9JKHS6D2MM4554NT27/lower-decks-romulan-whisky.jpg', '4', now(), now(), '6', '3', '4', 'mariner@m.com');
+VALUES('Amazing human. Followed all my instructions about Kitty to the letter. Would hire again.', 'https://images.squarespace-cdn.com/content/v1/5cc3d1b051f4d40415789cc2/1595578570907-LX9JKHS6D2MM4554NT27/lower-decks-romulan-whisky.jpg', '4', now(), now(), '7', '7', '6', 'mariner@m.com');
 
 INSERT INTO api_review(comment, image, rating, created_at, updated_at, owner_id, pet_owner_id, pet_sitter_id, owner_email)
-VALUES('No good, dirty, rotten scoundrel thought my bird had a bounty on her head', 'https://tv-vcr.com/wp-content/uploads/2018/05/boba-lando.jpg', '1', now(), now(), '9', '4', '5', 'lando@c.com');
+VALUES('No good, dirty, rotten scoundrel thought my bird had a bounty on her head', 'https://tv-vcr.com/wp-content/uploads/2018/05/boba-lando.jpg', '1', now(), now(), '9', '9', '8', 'lando@c.com');
 
 -- SELECT * FROM api_review;
 
