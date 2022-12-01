@@ -57,7 +57,7 @@ class ReviewDetailView(generics.RetrieveUpdateDestroyAPIView):
             raise PermissionDenied('Unauthorized, you do not own this review')
         request.data['review']['owner'] = request.user.id
         data = ReviewMadeSerializer(review, data=request.data['review'], partial=True)
-        print('request.dat', request.data)
+        print('request.data', request.data)
         if data.is_valid():
             data.save()
             return Response(status=status.HTTP_204_NO_CONTENT)
