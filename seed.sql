@@ -111,6 +111,7 @@ INSERT INTO api_petowner(first_name, last_name, pet_name, pet_bio, owner_id, pet
 VALUES ('Admin', 'Test', 'Admiral', 'A very real gerbil that is very cute', '10', 'gerbil', 'https://insidetelecom.com/wp-content/uploads/2022/04/weekend-article-1.jpg', now(), now());
 
 -- SELECT * FROM api_petowner;
+-- SELECT first_name, owner_id FROM api_petowner;
 
 -- NOTE: The owner_id may change - depending on if you created a superuser in the terminal outside of psql seed data
 
