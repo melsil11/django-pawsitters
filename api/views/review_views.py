@@ -5,7 +5,7 @@ from rest_framework import generics, status
 from django.shortcuts import get_object_or_404
 
 from ..models.review import Review
-from ..serializers import ReviewSerializer, ReviewMadeSerializer
+from ..serializers import ReviewSerializer, ReviewMadeSerializer, ReviewEditSerializer
 
 class ReviewsView(generics.ListCreateAPIView):
     permission_classes=(IsAuthenticatedOrReadOnly,)
@@ -56,8 +56,8 @@ class ReviewDetailView(generics.RetrieveUpdateDestroyAPIView):
         if request.user != review.owner:
             raise PermissionDenied('Unauthorized, you do not own this review')
         request.data['review']['owner'] = request.user.id
-        data = ReviewMadeSerializer(review, data=request.data['review'], partial=True)
-        print('request.dat', request.data)
+        data = ReviewEditSerializer(review, data=request.data['review'], partial=True)
+
         if data.is_valid():
             data.save()
             return Response(status=status.HTTP_204_NO_CONTENT)
