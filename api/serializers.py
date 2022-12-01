@@ -24,8 +24,8 @@ class BookingSerializer(serializers.ModelSerializer):
         model = Booking
 
 class BookingBookedSerializer(serializers.ModelSerializer):
-    pet_owner = serializers.StringRelatedField()
-    pet_sitter = serializers.StringRelatedField()
+    pet_owner = PetOwnerSerializer(many = False)
+    pet_sitter = PetSitterSerializer(many = False)
     class Meta:
         fields = '__all__'
         model = Booking

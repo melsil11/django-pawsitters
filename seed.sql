@@ -32,7 +32,7 @@ VALUES('vimes@v.com', 'Test2022!', 'False', 'True', 'False');
 
 -- 4
 INSERT INTO api_user(email, password, is_superuser, is_active, is_staff) 
-VALUES('cheery@c.com', 'Test2022!', 'False', 'True', 'False');
+VALUES('carrot@c.com', 'Test2022!', 'False', 'True', 'False');
 
 -- 5
 INSERT INTO api_user(email, password, is_superuser, is_active, is_staff) 
@@ -65,19 +65,19 @@ VALUES('admin@a.com', 'Test2022!', 'True', 'True', 'True');
 -- -- //////////
 -- 1
 INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
-VALUES('Kiki', 'Miyazaki', '13', 'True', 'True', 'True', 'True', 'True', 'True', 'True', '15', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'A a nice young witch off on her first year of training away from home.', 'https://imgur.com/gallery/uv80HwX', '2', now(), now());
+VALUES('Kiki', 'Miyazaki', '13', 'True', 'True', 'True', 'True', 'True', 'True', 'True', '15', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'A a nice young witch off on her first year of training away from home.', 'https://creators-images.vice.com/content-images/article/the-bakery-from-miyazaki-classic-kikis-delivery-service-is-real/827d6a9fa8aa040fec8090b5ed974fa2.jpg', '2', now(), now());
 
 -- 2
 INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
-VALUES('Sam', 'Vimes', '45', 'True', 'True', 'True', 'True', 'True', 'True', 'True', '15', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'An honest man who needs new boots - good with animals.', 'https://pbs.twimg.com/media/EQ_DgPKXYAAfsRW.jpg', '3', now(), now());
+VALUES('Sam', 'Vimes', '45', 'True', 'True', 'True', 'True', 'True', 'True', 'True', '15', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'An honest man who needs new boots - good with animals.', 'https://s3-us-west-2.amazonaws.com/flx-editorial-wordpress/wp-content/uploads/2020/12/31150813/WATCH_Richard-Dormer-as-Vimes_600x314.jpg', '3', now(), now());
 
 -- 3
 INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
-VALUES('Cheery', 'Littlebottom', '22', 'True', 'True', 'True', 'True', 'True', 'True', 'True', '15', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'A genius chemist. Here to have fun, solve crimes, and watch your pets!', 'https://static.wikia.nocookie.net/discworld/images/d/de/Cheery_littlebottom.jpg/revision/latest?cb=20190228230617', '4', now(), now());
+VALUES('Carrot', 'Ironfoundersson', '24', 'True', 'True', 'True', 'True', 'True', 'True', 'True', '15', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'A genius chemist. Here to have fun, solve crimes, and watch your pets!', 'http://images5.fanpop.com/image/photos/28000000/Sexy-tom-hopper-28002573-1365-2048.jpg', '4', now(), now());
 
 -- 4
 INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
-VALUES('Brad', 'Boimler', '26', 'True', 'True', 'True', 'True', 'True', 'True', 'True', '19', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'A Starfleet Junior Officer taking some time off to help you and your pets!', 'https://upload.wikimedia.org/wikipedia/en/9/99/Bradward_Boimler.png', '6', now(), now());
+VALUES('Brad', 'Boimler', '26', 'True', 'True', 'True', 'True', 'True', 'True', 'True', '19', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'A Starfleet Junior Officer taking some time off to help you and your pets!', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvqB8byGuFHvf8qKBKN0ZuoQmSUGdl-vjjeVraXeNuVmZsqD4n38l5d-A3-ulmnwgr06c&usqp=CAU', '6', now(), now());
 
 -- 5
 INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
@@ -92,7 +92,7 @@ VALUES('Boba', 'Fett', '35', 'True', 'True', 'True', 'True', 'True', 'True', 'Tr
 -- -- -- //////////
 -- 1
 INSERT INTO api_petowner(first_name, last_name, pet_name, pet_bio, owner_id, pet_type, images, created_at, updated_at) 
-VALUES ('Tombo', 'Piccolo', 'Good boy', 'The Goodest of Boys', '1', 'dog', 'https://imgur.com/gallery/xtoLyW2', now(), now());
+VALUES ('Tombo', 'Piccolo', 'Good boy', 'The Goodest of Boys', '1', 'dog', 'https://images.unsplash.com/photo-1558788353-f76d92427f16?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=738&q=80', now(), now());
 
 -- 2
 INSERT INTO api_petowner(first_name, last_name, pet_name, pet_bio, owner_id, pet_type, images, created_at, updated_at) 
