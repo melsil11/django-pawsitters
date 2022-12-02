@@ -30,6 +30,11 @@ class BookingBookedSerializer(serializers.ModelSerializer):
         fields = '__all__'
         model = Booking
 
+class BookingEditSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ('note', 'start_day', 'end_day', 'start_time', 'end_time')
+        model = Booking
+
 class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'

@@ -5,7 +5,7 @@ from rest_framework import generics, status
 from django.shortcuts import get_object_or_404
 
 from ..models.booking import Booking
-from ..serializers import BookingSerializer, BookingBookedSerializer
+from ..serializers import BookingSerializer, BookingBookedSerializer, BookingEditSerializer
 
 # The views for Bookings.
 class BookingsView(generics.ListCreateAPIView):
@@ -75,7 +75,7 @@ class BookingDetailView(generics.RetrieveUpdateDestroyAPIView):
         # Ensure the owner field is set to the current user's ID
         request.data['booking']['owner'] = request.user.id
         # Validate updates with serializer
-        data = BookingBookedSerializer(booking, data=request.data['booking'], partial=True)
+        data = BookingEditSerializer(booking, data=request.data['booking'], partial=True)
         # booking = BookingSerializer(data=request.data['booking'])
         if data.is_valid():
             # Save & send a 204 no content
