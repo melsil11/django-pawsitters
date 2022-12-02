@@ -109,7 +109,7 @@ VALUES('sabrina@a.com', 'Test2022!', 'True', 'True', 'True');
 -- -- //////////
 -- 1
 INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
-VALUES('Timm', 'Schoenborn', '85', 'True', 'True', 'True', 'True', 'True', 'True', 'True', '15', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'Pizza is pretty, pretty great, but donuts are the best.', 'https://ca.slack-edge.com/T0351JZQ0-UUGDXLLMV-f1f19d7adf52-512', '6', now(), now());
+VALUES('Timm', 'Schoenborn', '85', 'True', 'True', 'True', 'True', 'True', 'True', 'True', '15', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'All you need to know is that donuts are awful', 'https://ca.slack-edge.com/T0351JZQ0-UUGDXLLMV-f1f19d7adf52-512', '6', now(), now());
 
 -- 2
 INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
