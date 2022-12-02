@@ -48,7 +48,7 @@ VALUES('boimler@b.com', 'Test2022!', 'False', 'True', 'False');
 
 -- 8
 INSERT INTO api_user(email, password, is_superuser, is_active, is_staff) 
-VALUES('boba@f.com', 'Test2022!', 'False', 'True', 'False');
+VALUES('mando@m.com', 'Test2022!', 'False', 'True', 'False');
 
 -- 9
 INSERT INTO api_user(email, password, is_superuser, is_active, is_staff) 
@@ -81,7 +81,7 @@ VALUES('Brad', 'Boimler', '26', 'True', 'True', 'True', 'True', 'True', 'True', 
 
 -- 5
 INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
-VALUES('Boba', 'Fett', '35', 'True', 'True', 'True', 'True', 'True', 'True', 'True', '50', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'A man who will definitely get the job done.', 'https://m.media-amazon.com/images/I/41ICxL0-4DL._AC_.jpg', '8', now(), now());
+VALUES('The', 'Mandalorian', '35', 'True', 'True', 'True', 'True', 'True', 'True', 'True', '50', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'A man who will definitely get the job done.', 'https://www.etonline.com/sites/default/files/styles/max_1280x720/public/images/2020-12/mandalorian-finale-1280.jpeg?h=c673cd1c&itok=GXOBmwCW', '8', now(), now());
 
 -- SELECT * FROM api_petsitter;
 
