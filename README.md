@@ -7,6 +7,8 @@ Additionally, users can also sign up to be a pet sitter or dog walker on our app
 ## Landing Page
 ![pawSitters](https://i.imgur.com/XhDxiYe.png)
 
+### Client Repo
+https://github.com/angel-zh/react-pawsitters
 
 ### Link
 -Coming Soon- 
