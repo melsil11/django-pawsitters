@@ -24,10 +24,15 @@ class BookingSerializer(serializers.ModelSerializer):
         model = Booking
 
 class BookingBookedSerializer(serializers.ModelSerializer):
-    pet_owner = serializers.StringRelatedField()
-    pet_sitter = serializers.StringRelatedField()
+    pet_owner = PetOwnerSerializer(many = False)
+    pet_sitter = PetSitterSerializer(many = False)
     class Meta:
         fields = '__all__'
+        model = Booking
+
+class BookingEditSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ('note', 'start_day', 'end_day', 'start_time', 'end_time')
         model = Booking
 
 class ReviewSerializer(serializers.ModelSerializer):

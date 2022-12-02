@@ -4,8 +4,14 @@
 Our application is designed to allow pet pawrents to easily and conveniently find pet sitting and dog walking services for their beloved furry (or scaly) friends. 
 Additionally, users can also sign up to be a pet sitter or dog walker on our app, set their own schedule, rates, and preferences to make their experience as smooth and delightful as possible. Users are able to leave reviews for the sitters they hire on our platform to help other users find their perfect sitter!
 
+## Landing Page
+![pawSitters](https://i.imgur.com/XhDxiYe.png)
+
+### Client Repo
+https://github.com/angel-zh/react-pawsitters
+
 ### Link
--In Development- 
+-Coming Soon- 
 
 ### Brought to you by The Flossing Avocados Team
 * Alina Ishizaki - https://github.com/amishizaki
@@ -72,7 +78,7 @@ As a user, I want the ability to...
 `petowners`
 |Verb|Path|Action|Description|
 |---|---|---|---|
-| GET | /petowners/:id/ | Show | Pet owner’s profile |
+| GET | /petowners/ | Show | Pet owner’s profile |
 | POST | /petowners/:id/ | Create | Create pet owner|
 | PATCH | /petowners/:id/ | Edit  | Edit pet owner |
 | DELETE | /petowners/:id/ | Delete | Delete pet owner|
@@ -89,25 +95,9 @@ As a user, I want the ability to...
 |Verb|Path|Action|Description|
 |---|---|---|---|
 | GET | /reviews/ | Index | Index of all user's reviews|
-| GET | /reviews/:id | Show | Show a review|
 | POST | /reviews/:id/ | Create | Create a review|
 | PATCH | /reviews/:id/ | Edit  | Edit a review |
 | DELETE | /reviews/:id/ | Delete | Delete a review|
 
-
-## SCHEDULE
-|Schedule||
-|--------| -------------------|
-| Monday | Planning and Pitch |
-| Tuesday | Backend - Initial set up |
-| Monday | Backend |
-|Tuesday|Frontend - React  - Components etc|
-|Wednesday|Frontend - React - Components etc|
-|Thursday|Stretch Goals - deploy|
-|Friday|Present|
-|Saturday |Party!!!!|
-
-### Back-up 
-Pet Adoption Site
 
 # django-pawsitters
