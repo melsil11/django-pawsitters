@@ -2,19 +2,18 @@
 -- 1) psql
 -- 2) \i seed.sql
 
--- IF YOU HAVE TO DROP AND CREATE THE DB, MIGRATE BEFORE SEEDING
--- Can a migration be iniated from this file?
-
--- drop and/or create database as needed
--- DROP DATABASE pawsitters;
--- CREATE DATABASE pawsitters;
-
 -- connect to project db
 \c pawsitters;
 
+-- Special note:
+-- IF YOU HAVE TO DROP AND CREATE THE DB, MIGRATE BEFORE SEEDING
 
--- seed data for testing
+-- commands for dropping and creating in psql
+-- DROP DATABASE pawsitters;
+-- CREATE DATABASE pawsitters;
 
+
+-- The Seed Data
 -- //////////
 -- users
 -- //////////
@@ -102,6 +101,31 @@ VALUES('jimmy@woo.com', 'Test2022!', 'True', 'True', 'True');
 INSERT INTO api_user(email, password, is_superuser, is_active, is_staff) 
 VALUES('sabrina@a.com', 'Test2022!', 'True', 'True', 'True');
 
+-- 22
+INSERT INTO api_user(email, password, is_superuser, is_active, is_staff) 
+VALUES('rock@r.com', 'Test2022!', 'False', 'True', 'False');
+
+-- 23
+INSERT INTO api_user(email, password, is_superuser, is_active, is_staff) 
+VALUES('pink@lady.com', 'Test2022!', 'False', 'True', 'False');
+
+-- 24
+INSERT INTO api_user(email, password, is_superuser, is_active, is_staff) 
+VALUES('business@guy.com', 'Test2022!', 'False', 'True', 'False');
+
+-- 25
+INSERT INTO api_user(email, password, is_superuser, is_active, is_staff) 
+VALUES('master@s.com', 'Test2022!', 'False', 'True', 'False');
+
+-- 26
+INSERT INTO api_user(email, password, is_superuser, is_active, is_staff) 
+VALUES('model@a.com', 'Test2022!', 'False', 'True', 'False');
+
+-- 27
+INSERT INTO api_user(email, password, is_superuser, is_active, is_staff) 
+VALUES('pascal@a.com', 'Test2022!', 'False', 'True', 'False');
+
+
 -- SELECT * FROM api_user;
 
 -- -- //////////
@@ -109,7 +133,7 @@ VALUES('sabrina@a.com', 'Test2022!', 'True', 'True', 'True');
 -- -- //////////
 -- 1
 INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
-VALUES('Timm', 'Schoenborn', '85', 'True', 'True', 'True', 'True', 'True', 'True', 'True', '15', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'All you need to know is that donuts are awful', 'https://ca.slack-edge.com/T0351JZQ0-UUGDXLLMV-f1f19d7adf52-512', '6', now(), now());
+VALUES('Timm', 'Schoenborn', '85', 'True', 'True', 'True', 'True', 'True', 'True', 'True', '15', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'All you need to know is that donuts are my favorite.', 'https://ca.slack-edge.com/T0351JZQ0-UUGDXLLMV-f1f19d7adf52-512', '6', now(), now());
 
 -- 2
 INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
@@ -141,11 +165,11 @@ VALUES('Kiki', 'Miyazaki', '13', 'True', 'True', 'True', 'True', 'True', 'False'
 
 -- 9
 INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
-VALUES('Sam', 'Vimes', '45', 'True', 'True', 'True', 'True', 'False', 'False', 'False', '15', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'An honest man who needs new boots - good with animals.', 'https://s3-us-west-2.amazonaws.com/flx-editorial-wordpress/wp-content/uploads/2020/12/31150813/WATCH_Richard-Dormer-as-Vimes_600x314.jpg', '10', now(), now());
+VALUES('Sam', 'Vimes', '50', 'True', 'True', 'True', 'True', 'False', 'False', 'False', '15', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'An honest man in need of new boots. If you really need help, I will help care for your pets.', 'http://pm1.narvii.com/7072/9a8f72b9fac95d2ef18e83b84fb29148699d7a11r1-1080-1350v2_00.jpg', '10', now(), now());
 
 -- 10
 INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
-VALUES('Carrot', 'Ironfoundersson', '24', 'True', 'True', 'True', 'True', 'True', 'True', 'True', '15', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'A genius chemist. Here to have fun, solve crimes, and watch your pets!', 'http://images5.fanpop.com/image/photos/28000000/Sexy-tom-hopper-28002573-1365-2048.jpg', '11', now(), now());
+VALUES('Carrot', 'Ironfoundersson', '24', 'True', 'True', 'True', 'True', 'True', 'True', 'True', '15', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'I am a dwarf from the high mountains, but do not let that scare you. I have read all the manuals and I am fully prepared to take care of your pets.', 'http://images5.fanpop.com/image/photos/28000000/Sexy-tom-hopper-28002573-1365-2048.jpg', '11', now(), now());
 
 -- 11
 INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
@@ -161,19 +185,40 @@ VALUES('Guy', 'Dude', '35', 'True', 'True', 'True', 'False', 'False', 'False', '
 
 -- 17
 INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
-VALUES('Pink', 'Lady', '35', 'True', 'True', 'True', 'True', 'True', 'False', 'False', '50', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'Hello, I am a trained professional. Here to help you with your fur babies.', 'https://images.unsplash.com/photo-1614644147724-2d4785d69962?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80', '17', now(), now());
+VALUES('Pink', 'Lady', '35', 'True', 'True', 'True', 'True', 'True', 'False', 'False', '50', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'Hello, I am a trained professional. Here to help you with your fur babies.', 'https://images.unsplash.com/photo-1614644147724-2d4785d69962?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80', '23', now(), now());
 
 -- 18
 INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
-VALUES('Business', 'Guy', '35', 'True', 'True', 'True', 'True', 'True', 'True', 'True', '50', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'Need someone to care for your babies? Look no further. I am the expert.', 'https://images.unsplash.com/photo-1514222709107-a180c68d72b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=749&q=80', '18', now(), now());
+VALUES('Business', 'Guy', '35', 'True', 'True', 'True', 'True', 'True', 'True', 'True', '50', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'Need someone to care for your babies? Look no further. I am the expert.', 'https://images.unsplash.com/photo-1514222709107-a180c68d72b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=749&q=80', '24', now(), now());
 
 -- 19
 INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
-VALUES('Master', 'Student', '35', 'True', 'True', 'True', 'True', 'False', 'False', 'False', '50', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'Hi, I am currently studying Software Engineering with General Assembly. If you need help with your fur babies during your busy day, I am the gal for the job.', 'https://images.unsplash.com/photo-1598630388567-9fdbfd7e928e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80', '19', now(), now());
+VALUES('Master', 'Student', '35', 'True', 'True', 'True', 'True', 'False', 'False', 'False', '50', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'Hi, I am currently studying Software Engineering with General Assembly. If you need help with your fur babies during your busy day, I am the gal for the job.', 'https://images.unsplash.com/photo-1598630388567-9fdbfd7e928e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80', '25', now(), now());
 
 -- 20
 INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
-VALUES('Model', 'Artist', '35', 'True', 'True', 'True', 'False', 'True', 'True', 'False', '50', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'When I am not busy paiting and writing, I like to help my community with their pets. Sadly, I am allergic to cats.', 'https://images.unsplash.com/photo-1598630388567-9fdbfd7e928e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80', '20', now(), now());
+VALUES('Model', 'Artist', '35', 'True', 'True', 'True', 'False', 'True', 'True', 'False', '50', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'When I am not busy paiting and writing, I like to help my community with their pets. Sadly, I am allergic to cats.', 'https://images.unsplash.com/photo-1531123414780-f74242c2b052?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80', '26', now(), now());
+
+-- 21
+INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
+VALUES('Dwayne', 'The Rock, Johson', '50', 'True', 'True', 'True', 'True', 'False', 'False', 'False', '15', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'I love fishing, working-out, waffles, and occasionally making movies. However, I think its most important that we help our community. If you need help with your furbaby, I am the man for the job.', 'https://static01.nyt.com/images/2015/05/24/arts/24THEROCK/24THEROCK-articleLarge.jpg?quality=75&auto=webp&disable=upscale', '22', now(), now());
+
+-- 22
+INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
+VALUES('Beckett', 'Mariner', '25', 'True', 'True', 'True', 'True', 'True', 'True', 'True', '50', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'When I am not off in space with the Galactic Federation. I like watch after pets. The stranger the better.', 'https://www.hemispheresmag.com/wp-content/uploads/2020/07/tawny0349.jpg', '13', now(), now());
+
+-- 23
+INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
+VALUES('Brunhilde', 'Valkyrie', '25', 'True', 'True', 'True', 'True', 'True', 'True', 'True', '50', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'I am big fan of animals and helping my community. If I am not busy saving the world, I can help you with your pet.', 'https://static0.gamerantimages.com/wordpress/wp-content/uploads/2022/06/Tessa-Thompson-Thor-Love-and-Thunder-King-Valkyrie.jpg', '17', now(), now());
+
+
+-- 24
+INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
+VALUES('Jimmy', 'Woo', '32', 'True', 'True', 'True', 'True', 'True', 'True', 'True', '50', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'If you need someone to watch your pet and no one else is available. I can probably help.', 'https://img.buzzfeed.com/buzzfeed-static/static/2021-03/5/20/tmp/16114ac08f26/tmp-name-2-6726-1614975945-12_dblbig.jpg', '20', now(), now());
+
+
+INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
+VALUES('Pedro', 'Pascal', '47', 'True', 'True', 'True', 'True', 'True', 'True', 'True', '50', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'Researching a role and would love to watch some fur babies for you!', 'https://cdn.gracza.pl/galeria/mdb/o/426420703.jpg', '27', now(), now());
 
 
 
