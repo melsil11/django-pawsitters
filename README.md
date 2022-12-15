@@ -5,7 +5,7 @@ Our application is designed to allow pet pawrents to easily and conveniently fin
 Additionally, users can also sign up to be a pet sitter or dog walker on our app, set their own schedule, rates, and preferences to make their experience as smooth and delightful as possible. Users are able to leave reviews for the sitters they hire on our platform to help other users find their perfect sitter!
 
 ### Deployed Link
--Coming Soon- 
+https://pawsitters.netlify.app/ 
 
 ### Frontend Repo
 https://github.com/angel-zh/react-pawsitters
