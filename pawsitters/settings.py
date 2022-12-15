@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import sys
 import dj_database_url
-# import {cloudinary} from "@cloudinary/url-gen";
 
 # .env config:
 from dotenv import load_dotenv, find_dotenv
@@ -79,14 +78,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
-    # 'cloudinary',
-    # 'cloudinary_storage',
 ]
-# CLOUDINARY_STORAGE = {
-#     'CLOUD_NAME': 'dtszeeznm',
-#     'API_KEY': '861527428227261',
-#     'API_SECRET': 'xdHPYliBhsLtN8vv_EsCDRnrO4M'
-# }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
