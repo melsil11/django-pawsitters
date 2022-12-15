@@ -161,7 +161,7 @@ VALUES('Tommy', 'Peterson', '13', 'True', 'True', 'True', 'True', 'True', 'True'
 
 -- 8
 INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
-VALUES('Kiki', 'Miyazaki', '13', 'True', 'True', 'True', 'True', 'True', 'False', 'True', '15', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'A a nice young witch off on her first year of training away from home.', 'https://creators-images.vice.com/content-images/article/the-bakery-from-miyazaki-classic-kikis-delivery-service-is-real/827d6a9fa8aa040fec8090b5ed974fa2.jpg', '9', now(), now());
+VALUES('Kiki', 'Miyazaki', '13', 'True', 'True', 'True', 'True', 'True', 'False', 'True', '15', 'monday tuesday wednesday thursday friday saturday sunday', '00:00:00', '23:30:00', 'True', 'A nice young witch off on her first year of training away from home.', 'https://creators-images.vice.com/content-images/article/the-bakery-from-miyazaki-classic-kikis-delivery-service-is-real/827d6a9fa8aa040fec8090b5ed974fa2.jpg', '9', now(), now());
 
 -- 9
 INSERT INTO api_petsitter(first_name, last_name, age, dog_walking, pet_sitting, dog, cat, small_animal, reptile, bird, rate, availability, from_time, to_time, medicine, bio, image, owner_id, created_at, updated_at)
@@ -243,11 +243,11 @@ VALUES ('Beckett', 'Mariner', 'Kitty', 'The most amazing being you will ever mee
 
 -- 4
 INSERT INTO api_petowner(first_name, last_name, pet_name, pet_bio, owner_id, pet_type, images, created_at, updated_at) 
-VALUES ('Lando', 'Calrisian', 'Sherbert', 'A beautiful bird full of character and pizazz', '16', 'bird', 'https://upload.wikimedia.org/wikipedia/en/c/cb/Lando6-2.jpg', now(), now());
+VALUES ('Lando', 'Calrisian', 'Sherbert', 'A beautiful bird full of character and pizzazz', '16', 'bird', 'https://upload.wikimedia.org/wikipedia/en/c/cb/Lando6-2.jpg', now(), now());
 
 -- 5
 INSERT INTO api_petowner(first_name, last_name, pet_name, pet_bio, owner_id, pet_type, images, created_at, updated_at) 
-VALUES ('Mantis', 'One', 'Admiral', 'A very real gerbil that is very cute', '10', 'gerbil', 'https://insidetelecom.com/wp-content/uploads/2022/04/weekend-article-1.jpg', now(), now());
+VALUES ('Mantis', 'One', 'Admiral', 'A very real gerbil that is very cute', '10', 'small_animal', 'https://insidetelecom.com/wp-content/uploads/2022/04/weekend-article-1.jpg', now(), now());
 
 -- SELECT * FROM api_petowner;
 -- SELECT first_name, owner_id FROM api_petowner;
